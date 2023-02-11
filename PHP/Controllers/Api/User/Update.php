@@ -41,11 +41,11 @@
 
 namespace Controllers\Api\User;
 
-use Config\Request;
-use Config\Response;
+use Core\Request;
+use Core\Response;
 use Models\Api\City;
 use Models\Api\User;
-use Config\Validator;
+use Core\Validator;
 use Models\Api\State;
 use Models\Api\Address;
 
@@ -67,7 +67,7 @@ class Update
         $data = array_merge($data);
 
         if(!$user_id){
-            return response()->json(['error' => 'the user id is required!'], 404);
+            return Response::json(['error' => 'the user id is required!'], 404);
         }
 
         $user = new User;
@@ -90,7 +90,7 @@ class Update
                 'address_id' => $address
             ]);
             if($this->validationErrors){
-                return response()->json($this->validationErrors);
+                return Response::json($this->validationErrors);
             }
         }
 
@@ -105,7 +105,7 @@ class Update
                 'state_id' => $state
             ]);
             if($this->validationErrors){
-                return response()->json($this->validationErrors);
+                return Response::json($this->validationErrors);
             }
         }
 
@@ -121,7 +121,7 @@ class Update
             ]);
 
             if($this->validationErrors){
-                return response()->json($this->validationErrors);
+                return Response::json($this->validationErrors);
             }
         }
 
@@ -165,7 +165,7 @@ class Update
     protected function findOrCreateAddress($address){
 
         if(!$this->validateAddress($address)){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         };
 
         $bdAddress = new Address;
@@ -227,7 +227,7 @@ class Update
     protected function findOrCreateState($state){
 
         if(!$this->validateState($state)){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         };
 
         $bdState = new State;
@@ -287,7 +287,7 @@ class Update
     protected function findOrCreateCity($city){
 
         if(!$this->validateCity($city)){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         };
 
         $bdCity = new City;

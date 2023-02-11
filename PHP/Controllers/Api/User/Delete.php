@@ -3,7 +3,7 @@
 namespace Controllers\Api\User;
 
 use Exception;
-use Config\Response;
+use Core\Response;
 use Models\Api\Address;
 use Models\Api\User;
 

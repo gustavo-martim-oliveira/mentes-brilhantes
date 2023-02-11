@@ -39,11 +39,11 @@
 
 namespace Controllers\Api\User;
 
-use Config\Request;
-use Config\Response;
+use Core\Request;
+use Core\Response;
 use Models\Api\City;
 use Models\Api\User;
-use Config\Validator;
+use Core\Validator;
 use Models\Api\State;
 use Models\Api\Address;
 
@@ -97,7 +97,7 @@ class Create
             'city_id' => $city
         ]);
         if($this->validationErrors){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         }
 
         unset($data['address']);
@@ -143,7 +143,7 @@ class Create
     protected function findOrCreateAddress($address){
 
         if(!$this->validateAddress($address)){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         };
 
         $bdAddress = new Address;
@@ -203,7 +203,7 @@ class Create
     protected function findOrCreateState($state){
 
         if(!$this->validateState($state)){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         };
 
         $bdState = new State;
@@ -263,7 +263,7 @@ class Create
     protected function findOrCreateCity($city){
 
         if(!$this->validateCity($city)){
-            return response()->json($this->validationErrors);
+            return Response::json($this->validationErrors);
         };
 
         $bdCity = new City;

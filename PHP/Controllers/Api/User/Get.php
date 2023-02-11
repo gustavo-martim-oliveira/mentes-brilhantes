@@ -2,7 +2,7 @@
 
 namespace Controllers\Api\User;
 
-use Config\Response;
+use Core\Response;
 use Models\Api\User as ApiUser;
 
 class Get 

@@ -2,7 +2,7 @@
 
 namespace Models;
 
-use Config\Database;
+use Core\Database;
 use PDO;
 
 class Builder {

@@ -1,6 +1,6 @@
 <?php
 
-use Config\Router;
+use Core\Router;
 /**
  * Start router
  */

@@ -2,7 +2,7 @@
 
 namespace Controllers\Api\State;
 
-use Config\Response;
+use Core\Response;
 use Models\Api\State;
 
 class Index

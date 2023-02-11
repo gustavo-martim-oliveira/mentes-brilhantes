@@ -2,7 +2,7 @@
 
 namespace Controllers\Api\Address;
 
-use Config\Response;
+use Core\Response;
 use Models\Api\Address;
 
 class Index

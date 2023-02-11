@@ -3,7 +3,7 @@
 namespace Controllers\Api\City;
 
 
-use Config\Response;
+use Core\Response;
 use Models\Api\City;
 
 class Get
