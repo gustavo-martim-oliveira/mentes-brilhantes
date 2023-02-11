@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\User;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Address;
 use Exception;
 use Illuminate\Support\Facades\Log;
 
@@ -18,6 +19,7 @@ class Delete extends Controller
         }
 
         try{
+            Address::where('id', $user->address_id)->delete();
             $user->delete();
             return response()->json(['User deleted!']);
         }catch(Exception $e){

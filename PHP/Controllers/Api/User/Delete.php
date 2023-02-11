@@ -4,6 +4,7 @@ namespace Controllers\Api\User;
 
 use Exception;
 use Config\Response;
+use Models\Api\Address;
 use Models\Api\User;
 
 class Delete
@@ -17,6 +18,8 @@ class Delete
         }
 
         try{
+            $address = new Address;
+            $address->where('id', '=', $user->get()[0]->address_id)->delete();
             $user->delete();
             return Response::json(['User deleted!']);
         }catch(Exception $e){
