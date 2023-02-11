@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.stove {
+    width: 300px;
+    min-height: 250px;
+    background: #e8e8e8;
+    position: relative;
+}
+.stove::after {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 25px;
+    background-color: #000;
+    bottom: -15px;
+    left: 8px;
+}
+.stove::before {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 25px;
+    background-color: #000;
+    bottom: -15px;
+    right: 8px;
+}
+
+.stove > .dimensions{
+    width: 90%;
+    box-sizing: border-box;
+    margin: 5px auto 0 auto;
+    background-color: #e8e8e8;
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.stove > .burners {
+    background-color: #CCC;
+    width: 90%;
+    margin: 15px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.stove > .burners > i {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: aqua;
+    margin:10px auto;
+}
+.stove > .burners > i:nth-child(3){
+    width: 50px;
+    height: 50px;
+}
+
+.stove > .brand {
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFF;
+}
+.stove > .brand > button {
+    border: 0;
+    padding: 5px;
+    background: #CCC;
+    color: #333;
+    cursor: pointer;
+}
+.stove > .brand > button.light{
+    background-color: bisque;
+}
+.stove > .brand > .brand-name {
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.stove > .oven {
+    box-sizing: border-box;
+    width: 90%;
+    min-height: 150px;
+    margin: 10px auto;
+    border: 25px solid #000;
+    background-color: #333;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+.stove > .oven::after{
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 10px;
+    background-color: #000;
+}
+.stove > .oven > .lamp {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+}
+.stove > .oven > .lamp::after {
+    position: absolute;
+    content: ' ';
+    height: 25px;
+    width: 25px;
+    top: 3px;
+    left: -7.5px;
+    border-radius: 50%;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+.stove > .oven > .lamp.light::after {
+    background-color: #F5F5BB;
+    box-shadow: 
+        0 0 60px 30px #fff,  
+        0 0 100px 60px yellow,
+        0 0 140px 90px rgb(206, 206, 143);
+
+}
+.stove > .oven > .glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.2);
+}
