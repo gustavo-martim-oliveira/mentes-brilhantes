@@ -32,6 +32,22 @@ body {
     right: 8px;
 }
 
+.stove > .burners {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.stove > .burners > i {
+    width: 50px;
+    height: 10px;
+    background-color: #000000;
+}
+
 .stove > .dimensions{
     width: 90%;
     box-sizing: border-box;
@@ -43,7 +59,7 @@ body {
     padding: 10px;
 }
 
-.stove > .burners {
+.stove > .burnersButtons {
     background-color: #CCC;
     width: 90%;
     margin: 15px 5%;
@@ -52,14 +68,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-.stove > .burners > i {
+.stove > .burnersButtons > i {
     border-radius: 50%;
     width: 25px;
     height: 25px;
     background-color: aqua;
     margin:10px auto;
 }
-.stove > .burners > i:nth-child(3){
+.stove > .burnersButtons > i:nth-child(3){
     width: 50px;
     height: 50px;
 }

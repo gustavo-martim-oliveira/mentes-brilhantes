@@ -6,7 +6,7 @@ class Stove {
         this.color = color;
         this.dimensions = dimensions;
         this.brand = brand;
-        this.burners = burners.map((value, index) => new Burner(`Burner ${index}`, value));
+        this.burners = burners.map(value => new Burner(value));
         this.oven = new Oven();
     }
 }
@@ -15,8 +15,7 @@ class Stove {
  * Generate burner for Stove
  */
 class Burner {
-    constructor(name, color) {
-        this.name = name;
+    constructor(color) {
         this.color = color;
     }
 }
@@ -26,7 +25,7 @@ class Burner {
  */
 class Oven {
     constructor() {
-        this.door = new Door(`Glass ${1}`, `Dimensions ${1}`);
+        this.door = new Door(`Dimensions ${1}`);
     }
 }
 
@@ -34,13 +33,12 @@ class Oven {
  * Generate Glass Door for Oven
  */
 class Door {
-    constructor(glass, dimensions) {
-        this.glass = glass;
+    constructor(dimensions) {
         this.dimensions = dimensions;
     }
 }
 
-const myStove = new Stove("#e8e8e8", "30 x 60 x 90 cm", "GM Industries", ['red', 'green', 'blue', 'black', 'red']);
+const myStove = new Stove("#e8e8e8", "30 x 60 x 90 cm", "Your Brand", ['red', 'green', 'blue', 'black', 'red']);
 
 // Retrieve all stove elements
 let stoveElement = document.getElementById('stove');
@@ -48,7 +46,7 @@ let dimensions = document.getElementById('dimensions');
 let stoveBrand = document.getElementById('brand-name');
 let buttonOvenLamp = document.getElementById('lamp-button');
 let ovenLamp = document.getElementById('oven-lamp');
-let burners = document.getElementById('burners');
+let burnersButtons = document.getElementById('burnersButtons');
 
 //Set dimension text
 dimensions.innerHTML = myStove.dimensions;
@@ -60,13 +58,13 @@ stoveElement.style = 'background: ' + myStove.color;
 stoveBrand.innerHTML = myStove.brand;
 
 //Clear default burners
-burners.innerHTML = '';
+burnersButtons.innerHTML = '';
 
 //Each burners
 myStove.burners.forEach( el => {
     var i = document.createElement('i');
     i.style = 'background-color: ' + el.color;
-    burners.append(i);
+    burnersButtons.append(i);
 });
 
 /**
