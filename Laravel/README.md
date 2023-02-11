@@ -5,6 +5,7 @@
         - php artisan migrate
 
 ## API Routes
+    - yourdomain/api/*
 
 ### USERS 
     [GET] users/ - Retrieve all users stored
