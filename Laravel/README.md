@@ -4,6 +4,13 @@
         - Configure the database on .env file
         - php artisan migrate
 
+## Requirements
+
+    - PHP 8.1 ^
+    - MySql or MariaDB
+    - Composer
+    - NodeJS
+
 ## API Routes
     - yourdomain/api/*
 

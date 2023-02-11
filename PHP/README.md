@@ -4,6 +4,10 @@
    - Configure the connection on "Config/Database.php"
    - run php -S localhost
 
+## Requirements
+    - PHP 8.1 ^
+    - MySql or MariaDB
+
 ## API Routes
     - yourdomain/api/*
 
