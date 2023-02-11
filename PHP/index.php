@@ -5,14 +5,12 @@
  * 
  */
 
-spl_autoload_register(function ($class) { 
+/**
+ * Import Autoload File
+ */
+require_once(__DIR__.'/autoload.php');
 
-    $class = __DIR__ . '/' .  $class . '.php';
-
-    if (file_exists($class)) {
-        require_once $class;
-    } 
-});
-
-
+/**
+ * Import routes list
+ */
 require_once(__DIR__.'/Routes/api.php');
