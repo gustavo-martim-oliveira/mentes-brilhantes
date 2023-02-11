@@ -180,6 +180,8 @@ class Update
         }else{
             $newAddress = $bdAddress->create($address);
             $address = $bdAddress->where('id', '=', $newAddress)->get()[0]->id;
+
+            $bdAddress->where('id', '=', $this->user->address_id)->delete();
         }
 
         return $address;
